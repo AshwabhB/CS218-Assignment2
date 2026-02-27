@@ -203,6 +203,7 @@ async def create_order(
 
     response_body = {"order_id": order_id, "status": "created"}
 
+    #Making sure the order is created before the erroris displayed
     db.create_order_atomic(
         order_id=order_id,
         customer_id=order.customer_id,
